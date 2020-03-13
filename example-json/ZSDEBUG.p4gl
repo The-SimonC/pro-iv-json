@@ -1,0 +1,15 @@
+{
+   "Description": "CUSTOM DEBUG",
+   "Lines": [
+      "PARMS($$MESSAGE)",
+      "#A = SYSTEM(\"echo '\" + $$MESSAGE + \"' >>/hcis/live/data/\" + @FUNCT)",
+      "RETURN"
+   ],
+   "Meta": {
+      "Type": "p4gl",
+      "Version": "1"
+   },
+   "Name": "ZSDEBUG",
+   "SecurityCategory": "",
+   "Type": "Procedural"
+}

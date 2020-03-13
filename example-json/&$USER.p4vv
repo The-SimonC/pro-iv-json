@@ -1,0 +1,14 @@
+{
+   "AlphaValue": "        HCIS Live Environment - FOXY",
+   "AlphaValueTranslationMaxLength": 0,
+   "AlphaValueTranslationMeaning": "",
+   "AlphaValueTranslationMode": "",
+   "Description": "GLOBAL ENVIRONMENT NAME / LICENCED USER NAME",
+   "Meta": {
+      "Type": "p4vv",
+      "Version": "1"
+   },
+   "Name": "&$USER",
+   "NumericDisplayCode": "",
+   "NumericValue": 0
+}

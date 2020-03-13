@@ -1,0 +1,14 @@
+{
+   "AlphaValue": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+   "AlphaValueTranslationMaxLength": 0,
+   "AlphaValueTranslationMeaning": "",
+   "AlphaValueTranslationMode": "",
+   "Description": "List of upper case characters",
+   "Meta": {
+      "Type": "p4vv",
+      "Version": "1"
+   },
+   "Name": "&$UPPER",
+   "NumericDisplayCode": "",
+   "NumericValue": 0
+}

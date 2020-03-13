@@ -1,0 +1,14 @@
+{
+   "AlphaValue": "",
+   "AlphaValueTranslationMaxLength": 0,
+   "AlphaValueTranslationMeaning": "",
+   "AlphaValueTranslationMode": "",
+   "Description": "COMPANY DIVISION CURRENT PROCESSING DATE",
+   "Meta": {
+      "Type": "p4vv",
+      "Version": "1"
+   },
+   "Name": "CVC%#CVDATE",
+   "NumericDisplayCode": "",
+   "NumericValue": 79697
+}

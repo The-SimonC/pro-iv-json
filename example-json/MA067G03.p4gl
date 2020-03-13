@@ -1,0 +1,42 @@
+{
+   "Description": "Calculate Miras Relief, Given the Gross interest and Cap. Bal.",
+   "Lines": [
+      "PARMS(#GROSS_INT,#CAP_BAL,#ML,#TR)",
+      "// 6.2 APB 20/01/93 Pass Miras Limit and Tax rate as parameters and not",
+      "// as externs, as need to pass one of two sets....",
+      "// 6.1 DJA 02/11/92 Use saved values if #INTFLAG is set.",
+      "// 6.0 APB 16/03/92 Initial Version",
+      "$$DBG = \"G03:*** Start *** Calculate MIRAS from GINT\"",
+      "IF @$COM2 = \"Y\" THEN DEBUG($$DBG) ;",
+      "// Calculate Miras Relief, given the gross interest, the miras limit,",
+      "// the current account balance and the tax rate. If balance is zero,",
+      "// zero miras relief is returned.",
+      "IF #CAP_BAL = 0 OR #ML = 0 THEN",
+      "   #RELIEF = 0",
+      "ELSE",
+      "   // If balance is greater than the miras limit, scale gross interest to",
+      "   // miras limit and calculate relief, otherwise use gross interest",
+      "   // directly.",
+      "   IF #CAP_BAL > #ML THEN",
+      "      #RELIEF = #GROSS_INT * #ML * #TR / (#CAP_BAL * 100)",
+      "   ELSE",
+      "      #RELIEF = #GROSS_INT * #TR / 100",
+      "   ENDIF",
+      "   #RELIEF = ROUND(#RELIEF,2)",
+      "ENDIF",
+      "$$DBG = \"G03:M=\" + CONV(#RELIEF) + \", GI:\" + CONV(#GROSS_INT)",
+      "$$DBG = $$DBG + \", CB:\" + CONV(#CAP_BAL) + \", ML:\" + CONV(#ML)",
+      "$$DBG = $$DBG + \", TR:\" + CONV(#TR)",
+      "IF @$COM2 = \"Y\" THEN DEBUG($$DBG) ;",
+      "$$DBG = \"G03:*** End *** Returning \" + CONV(#RELIEF)",
+      "IF @$COM2 = \"Y\" THEN DEBUG($$DBG) ;",
+      "RETURN(#RELIEF)"
+   ],
+   "Meta": {
+      "Type": "p4gl",
+      "Version": "1"
+   },
+   "Name": "MA067G03",
+   "SecurityCategory": "",
+   "Type": "Numeric"
+}

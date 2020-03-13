@@ -1,0 +1,14 @@
+{
+   "AlphaValue": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_",
+   "AlphaValueTranslationMaxLength": 0,
+   "AlphaValueTranslationMeaning": "",
+   "AlphaValueTranslationMode": "",
+   "Description": "Valid Characters",
+   "Meta": {
+      "Type": "p4vv",
+      "Version": "1"
+   },
+   "Name": "&$VALID_CHAR",
+   "NumericDisplayCode": "",
+   "NumericValue": 0
+}

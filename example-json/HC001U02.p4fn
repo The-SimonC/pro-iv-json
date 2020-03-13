@@ -1,0 +1,110 @@
+{
+   "Analyst": "JCH",
+   "BatchQueueId": "",
+   "BatchQueuePriority": "",
+   "Contents": [{
+      "Contents": [
+         {
+            "AccessMode": "L",
+            "AfterFailedReadEvent": "",
+            "AfterFailedWriteEvent": "",
+            "AfterSuccessfulReadEvent": "",
+            "AfterSuccessfulWriteEvent": "",
+            "BeforeReadEvent": "",
+            "BeforeWriteEvent": "",
+            "FileAccessorName": "IFBTCHEX",
+            "IsClearFile": "false",
+            "KeyMappingEvent": "",
+            "RecordLockedEvent": "",
+            "Type": "File"
+         },
+         {
+            "AccessMode": "A",
+            "AfterFailedReadEvent": "181",
+            "AfterFailedWriteEvent": "",
+            "AfterSuccessfulReadEvent": "201",
+            "AfterSuccessfulWriteEvent": "",
+            "BeforeReadEvent": "",
+            "BeforeWriteEvent": "221",
+            "FileAccessorName": "BATCHEXP",
+            "IsClearFile": "true",
+            "KeyMappingEvent": "",
+            "RecordLockedEvent": "",
+            "Type": "File"
+         }
+      ],
+      "CycleEndTag": "Cycle1",
+      "CycleEntryEvent": "001",
+      "CycleExitEvent": "255",
+      "CycleName": "Cycle1",
+      "CycleStartTag": "Cycle1",
+      "CycleType": "ManyTime Update",
+      "IsSortPass": "",
+      "LastSortFileSequence": 0,
+      "SortEvent": "",
+      "Type": "Cycle"
+   }],
+   "ErrorFunction": "MENUDR",
+   "Events": {
+      "001": [
+         "// DEF LOGIC 1 LU#1",
+         "#COUNT = 0"
+      ],
+      "181": [
+         "// ARE BATCHEXP LU#1",
+         "DSEL"
+      ],
+      "201": [
+         "// ARNE BATCHEXP LU#1",
+         "IF MORTGAGE = '' THEN DSEL;"
+      ],
+      "221": [
+         "// BW BATCHEXP LU#1",
+         "#COUNT += 1",
+         "// UMSG(\"ADD RECORD \" + CONV(#COUNT))"
+      ],
+      "255": [
+         "// EXIT LOGIC LU#1",
+         "// UMSG(\"RECORDS ADDED = \" + CONV(#COUNT),-1)"
+      ]
+   },
+   "ExitFunction": "MENUD",
+   "FunctionEntryEvent": "",
+   "FunctionExitEvent": "",
+   "FunctionParameters": [],
+   "FunctionTitleForMenus": "",
+   "IsBlockFunctionExecution": "false",
+   "IsFunctionInProduction": "false",
+   "IsGlobal": "false",
+   "IsRestfulFunction": "false",
+   "IsSuppressReportUpdateMessage": "false",
+   "MenuIcon": "",
+   "Meta": {
+      "Type": "p4fn",
+      "Version": "1"
+   },
+   "MinimumSecurityLevel": 1,
+   "Name": "HC001U02",
+   "Notes": [
+      "1.00 JCH 07/07/02 012796 Changes to Improve Batch Processing.",
+      "                  This function reads flat file batchexp.txt to",
+      "                  populate BATCHEXP (proisam file)."
+   ],
+   "Password": "",
+   "ScratchVariables": [{
+      "ArraySize": 0,
+      "Description": "",
+      "Length": 12,
+      "Name": "#COUNT"
+   }],
+   "SecurityCategory": "TEST",
+   "SecurityFailureFunction": "",
+   "Title": "Populate Batch Exceptions File BATCHEXP",
+   "TitleForMenusTranslationMaximumLength": 0,
+   "TitleForMenusTranslationMeaningCode": "",
+   "TitleForMenusTranslationMode": "",
+   "TitleTranslationMaximumLength": 0,
+   "TitleTranslationMeaningCode": "",
+   "TitleTranslationMode": "",
+   "Type": "Update"
+}

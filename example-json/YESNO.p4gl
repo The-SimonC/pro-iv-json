@@ -1,0 +1,23 @@
+{
+   "Description": "SPECIAL CHECK FOR 'Y','y','N','n'",
+   "GlobalLogicMessages": [{
+      "MessageId": "001",
+      "Text": "*** ENTER 'Y','N' OR '/' ***",
+      "TextTranslationMaximumLength": 0,
+      "TextTranslationMeaningCode": "",
+      "TextTranslationMode": ""
+   }],
+   "Lines": [
+      "IF $INPUT = 'Y','y' THEN $INPUT = 'Y' EXIT ;",
+      "IF $INPUT = 'N','n' THEN $INPUT = 'N' EXIT ;",
+      "MSG(1)",
+      "EXIT"
+   ],
+   "Meta": {
+      "Type": "p4gl",
+      "Version": "1"
+   },
+   "Name": "YESNO",
+   "SecurityCategory": "UTL",
+   "Type": "Procedural"
+}

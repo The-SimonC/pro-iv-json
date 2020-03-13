@@ -1,0 +1,128 @@
+{
+   "Analyst": "ADH",
+   "BatchQueueId": "",
+   "BatchQueuePriority": "",
+   "Contents": [{
+      "Contents": [
+         {
+            "AccessMode": "L",
+            "AfterFailedReadEvent": "",
+            "AfterFailedWriteEvent": "",
+            "AfterSuccessfulReadEvent": "201",
+            "AfterSuccessfulWriteEvent": "",
+            "BeforeReadEvent": "",
+            "BeforeWriteEvent": "",
+            "FileAccessorName": "S03",
+            "IsClearFile": "false",
+            "KeyMappingEvent": "",
+            "RecordLockedEvent": "",
+            "Type": "File"
+         },
+         {
+            "Contents": [
+               {
+                  "AccessMode": "L",
+                  "AfterFailedReadEvent": "",
+                  "AfterFailedWriteEvent": "",
+                  "AfterSuccessfulReadEvent": "",
+                  "AfterSuccessfulWriteEvent": "",
+                  "BeforeReadEvent": "",
+                  "BeforeWriteEvent": "",
+                  "FileAccessorName": "LPS01",
+                  "IsClearFile": "false",
+                  "KeyMappingEvent": "",
+                  "RecordLockedEvent": "",
+                  "Type": "File"
+               },
+               {
+                  "AccessMode": "A",
+                  "AfterFailedReadEvent": "",
+                  "AfterFailedWriteEvent": "",
+                  "AfterSuccessfulReadEvent": "",
+                  "AfterSuccessfulWriteEvent": "",
+                  "BeforeReadEvent": "200",
+                  "BeforeWriteEvent": "",
+                  "FileAccessorName": "MAM11",
+                  "IsClearFile": "true",
+                  "KeyMappingEvent": "",
+                  "RecordLockedEvent": "",
+                  "Type": "File"
+               }
+            ],
+            "CycleEndTag": "Cycle2",
+            "CycleEntryEvent": "002",
+            "CycleExitEvent": "",
+            "CycleName": "Cycle2",
+            "CycleStartTag": "Cycle2",
+            "CycleType": "ManyTime Update",
+            "IsSortPass": "",
+            "LastSortFileSequence": 0,
+            "SortEvent": "",
+            "Type": "Cycle"
+         }
+      ],
+      "CycleEndTag": "Cycle2",
+      "CycleEntryEvent": "001",
+      "CycleExitEvent": "251",
+      "CycleName": "Cycle1",
+      "CycleStartTag": "Cycle1",
+      "CycleType": "OneTime Update",
+      "IsSortPass": "",
+      "LastSortFileSequence": 0,
+      "SortEvent": "",
+      "Type": "Cycle"
+   }],
+   "ErrorFunction": "MENUR",
+   "Events": {
+      "001": ["COMMTERM = @TERM"],
+      "002": ["ALIAS('LPS01',&$BANKLOC)"],
+      "200": ["SORTCODE = TEXTLINE(1,6)"],
+      "201": ["VA018GL9()"],
+      "251": [
+         "IF BITON(&#@BIT5) THEN",
+         "   @LFUNCT = \"VA007U09\"",
+         "ELSE",
+         "   @LFUNCT = \"VA007U02\"",
+         "ENDIF"
+      ]
+   },
+   "ExitFunction": "MENUD",
+   "FunctionEntryEvent": "",
+   "FunctionExitEvent": "",
+   "FunctionParameters": [],
+   "FunctionTitleForMenus": "",
+   "IsBlockFunctionExecution": "false",
+   "IsFunctionInProduction": "false",
+   "IsGlobal": "false",
+   "IsRestfulFunction": "false",
+   "IsSuppressReportUpdateMessage": "false",
+   "MenuIcon": "",
+   "Meta": {
+      "Type": "p4fn",
+      "Version": "1"
+   },
+   "MinimumSecurityLevel": 1,
+   "Name": "HC001U01",
+   "Notes": [
+      "VERSION 1.0 MODULE",
+      "-----------------------------------------------------------",
+      "This function clears down MAM11 reads LPS01 then adds to MAM11"
+   ],
+   "Password": "",
+   "ScratchVariables": [{
+      "ArraySize": 0,
+      "Description": "EXTERN in global logic: VA018GL9",
+      "Length": 30,
+      "Name": "$TEXT"
+   }],
+   "SecurityCategory": "CVC",
+   "SecurityFailureFunction": "",
+   "Title": "",
+   "TitleForMenusTranslationMaximumLength": 0,
+   "TitleForMenusTranslationMeaningCode": "",
+   "TitleForMenusTranslationMode": "",
+   "TitleTranslationMaximumLength": 0,
+   "TitleTranslationMeaningCode": "",
+   "TitleTranslationMode": "",
+   "Type": "Update"
+}

@@ -1,0 +1,49 @@
+{
+   "Description": "SPECIAL CHECK FOR Yy",
+   "GlobalLogicMessages": [
+      {
+         "MessageId": "001",
+         "Text": "*** INVALID INPUT - VALID OPTION IS 'Y' ONLY ***",
+         "TextTranslationMaximumLength": 0,
+         "TextTranslationMeaningCode": "",
+         "TextTranslationMode": ""
+      },
+      {
+         "MessageId": "002",
+         "Text": "*** INVALID INPUT - VALID OPTIONS ARE 'Y', '.' ***",
+         "TextTranslationMaximumLength": 0,
+         "TextTranslationMeaningCode": "",
+         "TextTranslationMode": ""
+      },
+      {
+         "MessageId": "003",
+         "Text": "*** INVALID INPUT - VALID OPTIONS ARE 'Y', '/', '.' ***",
+         "TextTranslationMaximumLength": 0,
+         "TextTranslationMeaningCode": "",
+         "TextTranslationMode": ""
+      }
+   ],
+   "Lines": [
+      "IF $INPUT = 'Y','y' THEN",
+      "   $INPUT = 'Y'",
+      "ELSE",
+      "   IF BITON(&#@SUPP-CANX) THEN",
+      "      IF BITON(&#@SUPP-EXIT) THEN",
+      "         MSG(1)",
+      "      ELSE",
+      "         MSG(2)",
+      "      ENDIF",
+      "   ELSE",
+      "      MSG(3)",
+      "   ENDIF",
+      "ENDIF",
+      "RETURN()"
+   ],
+   "Meta": {
+      "Type": "p4gl",
+      "Version": "1"
+   },
+   "Name": "YES",
+   "SecurityCategory": "UTL",
+   "Type": "Procedural"
+}

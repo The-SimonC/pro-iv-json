@@ -1,0 +1,14 @@
+{
+   "AlphaValue": "MA086U01",
+   "AlphaValueTranslationMaxLength": 0,
+   "AlphaValueTranslationMeaning": "",
+   "AlphaValueTranslationMode": "",
+   "Description": "FIRST FUNCTION TO EXECUTE AFTER LOGON (VA009U01)",
+   "Meta": {
+      "Type": "p4vv",
+      "Version": "1"
+   },
+   "Name": "CVC%$CVCLOGN",
+   "NumericDisplayCode": "",
+   "NumericValue": 0
+}
